@@ -8,7 +8,7 @@ csigak = []
 csiga = {}
 
 
-with open('csigak.txt', ' r', encoding='utf-8')as bemenet:
+with open('csigak.txt',"r", encoding='utf-8')as bemenet:
     for sor in bemenet:
         adatok = sor.strip().split(";")
         csiga['latin'] = adatok[0]
@@ -18,3 +18,10 @@ with open('csigak.txt', ' r', encoding='utf-8')as bemenet:
         
         
 print(f"{len(csigak)}db csiga adatai vannak a fájlban")
+
+db = 0
+for i in range(len(csigak)):
+    if 'meztelen' in csigak[i]['magyar'] and 'fél' not in csigak[i]['magyar']:
+        db += 1
+    
+print(f"{db} db meztelen található az adattok között")
