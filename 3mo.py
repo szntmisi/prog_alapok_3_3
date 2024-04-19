@@ -11,9 +11,10 @@ csiga = {}
 with open('csigak.txt', ' r', encoding='utf-8')as bemenet:
     for sor in bemenet:
         adatok = sor.strip().split(";")
-        csiga['latin_n'] = str(adatok[0])
-        csiga['magyar_n'] = str(adatok[1])
+        csiga['latin'] = adatok[0]
+        csiga['magyar'] = adatok[1]
         csigak.append(csiga)
         csiga = {}
         
         
+print(f"{len(csigak)}db csiga adatai vannak a fájlban")
